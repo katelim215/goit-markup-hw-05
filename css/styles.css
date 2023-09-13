@@ -106,6 +106,10 @@ header {
     width: 100%;
 }
 
+.nav-list-item.active .nav-list-link::after {
+    width: 100%;
+}
+
 .nav-list, .address-list {
     display: flex;
     gap: 40px;
