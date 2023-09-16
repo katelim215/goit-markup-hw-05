@@ -110,6 +110,9 @@ header {
 
 .nav-list-item.active .nav-list-link::after {
     width: 100%;
+}
+
+.nav-list-item.active .nav-list-link {
     color: var(--ocean);
 }
 
@@ -190,6 +193,7 @@ header {
     border: unset;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-cta:hover,
@@ -492,7 +496,9 @@ header {
     outline: none;
     padding: 12px 24px;
     cursor: pointer;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: background-color, border, box-shadow, color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-buttons-list {
@@ -547,12 +553,15 @@ header {
     width: calc((100% - 48px) / 3);
     border: 1px solid var(--cornflower);
     background: var(--white);
+    transition-property: border, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-images-items:hover,
 .portfolio-images-items:focus {
-    border: 1px solid var(--CLOUD, #F4F4FD);
-    background: var(--WHITE, #FFF);
+    border: 1px solid var(--cloud);
+    background: var(--white);
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 
                 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 
                 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
@@ -627,6 +636,7 @@ header {
 }
 
 .modal-close-link {
+    color: var(--navyblue);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -636,7 +646,7 @@ header {
     stroke-width: 1px;
     stroke: rgba(0, 0, 0, 0.10);
     fill: currentColor;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close {
@@ -652,11 +662,15 @@ header {
     top: 24px;
     right: 24px;
     color: var(--navyblue);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition-property: background-color, border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close:hover {
     background-color: var(--ocean);
+    border-color: var(--ocean);
 }
 
 .modal-close:hover .modal-close-link {
